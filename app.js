@@ -58,3 +58,51 @@ function updateVat(vat, awv) {
   salesVatInput.value = no1;
   aevInput.value = no2;
 }
+// create a row div
+function createRow(x) {
+  //create row div
+  let newRowDiv = document.createElement("div");
+  newRowDiv.className = "row ir";
+  newRowDiv.innerText = `${x + 1}`;
+  return newRowDiv;
+}
+// container div for rows
+const containerDiv = document.querySelector(".js-html-container");
+// add the row divs
+let i = 0;
+while (i <= 30) {
+  containerDiv.appendChild(createRow(i));
+  i++;
+}
+
+// get rows i made
+const ir = document.querySelectorAll(".ir");
+
+// function for the divs
+function makeTheInnerDivs() {
+  let newDiv = document.createElement("div");
+  newDiv.className = `one-third column in`;
+  newDiv.innerText = "ay";
+
+  return newDiv;
+}
+
+//loop through the ir divs and create the input divs
+
+for (let i = 0; i < 31; i++) {
+  ir[i].appendChild(makeTheInnerDivs());
+}
+// get the new divs we made
+let inputDivs = document.querySelectorAll(".in");
+// make input field
+function makeInputField() {
+  let newIf = document.createElement("input");
+  newIf.className = "input-size sn1";
+  newIf.setAttribute("type", "number");
+  newIf.innerText = "33";
+}
+
+for (let i = 0; i < 31; i++) {
+  inputDivs[i].appendChild(makeInputField());
+}
+console.log();
