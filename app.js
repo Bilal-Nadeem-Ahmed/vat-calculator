@@ -100,7 +100,6 @@ for (let i = 0; i < 31; i++) {
 }
 // get the new input divs we made
 const inputDivs = document.querySelectorAll(".in");
-
 // get the vat display divs
 const vatDivs = document.querySelectorAll(".vat");
 // get the amount excluding vat divs
