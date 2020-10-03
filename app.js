@@ -4,10 +4,8 @@ const noToCalc = document.getElementById("val-inpt"),
   addVatBtn = document.getElementById("val2-btn"),
   removeVatBtn = document.getElementById("val3-btn"),
   returnMessage = document.getElementById("message"),
-  salesValue1 = document.getElementById("sn1"),
-  salesValueButton = document.getElementById("calculate"),
-  aevInput = document.querySelector(".aev1"),
-  salesVatInput = document.querySelector(".vat1");
+  salesValueButton = document.getElementById("calculate");
+
 // Input for calculate vat
 calcVatBtn.addEventListener("click", function () {
   // numbers
@@ -35,28 +33,9 @@ removeVatBtn.addEventListener("click", function () {
   setMessage(`This number without VAT at 20% is ${removeVat}`);
 });
 
-//Input for sales Value 1
-salesValueButton.addEventListener("click", function () {
-  // numbers
-  let no = parseInt(salesValue1.value),
-    awv = (no / 120) * 100,
-    vat = (no / 120) * 20;
-  // update fields
-  updateVat(vat, awv);
-});
-
-// set message function
+//set message function
 function setMessage(msg) {
   returnMessage.textContent = msg;
-}
-
-// vat on sales fields update
-function updateVat(vat, awv) {
-  let no1 = vat.toFixed(2),
-    no2 = awv.toFixed(2);
-
-  salesVatInput.value = no1;
-  aevInput.value = no2;
 }
 
 // create a row div
@@ -109,7 +88,7 @@ function makeInputField(a, b) {
   let newIf = document.createElement("input");
   newIf.className = `input-size ${a}`;
   newIf.setAttribute("type", "number");
-  newIf.value = "33";
+
   // sets the diabled field
   if (b === true) {
     newIf.setAttribute("disabled", "true");
@@ -124,4 +103,15 @@ for (let i = 0; i < 31; i++) {
   aevDivs[i].appendChild(makeInputField("aev1", true));
 }
 const ayay = document.querySelectorAll(".sn1");
-console.log(ayay);
+
+// get the input fields we created
+const aevInput = document.querySelectorAll(".aev1"),
+  salesValue1 = document.querySelectorAll(".sn1"),
+  salesVatInput = document.querySelector(".vat1");
+
+salesValueButton.addEventListener("click", function () {
+  let info = salesValue1[1].value;
+
+  aevInput[2].value = "234";
+  console.log(info);
+});
