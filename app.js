@@ -58,6 +58,7 @@ function updateVat(vat, awv) {
   salesVatInput.value = no1;
   aevInput.value = no2;
 }
+
 // create a row div
 function createRow(x) {
   //create row div
@@ -66,10 +67,6 @@ function createRow(x) {
   newRowDiv.innerText = `${x + 1}`;
   return newRowDiv;
 }
-
-//cut from
-
-// cut to
 
 // container div for rows
 const containerDiv = document.querySelector(".js-html-container");
@@ -83,11 +80,11 @@ while (i <= 30) {
 // get rows i made
 const ir = document.querySelectorAll(".ir");
 
-// function for the divs
-function makeTheInnerDivs() {
+// function for the input  divs take a for class name, b for inner text
+function makeTheInnerDivs(a, b) {
   let newDiv = document.createElement("div");
-  newDiv.className = `one-third column in`;
-  newDiv.innerText = "ay";
+  newDiv.className = `one-third column ${a}`;
+  newDiv.innerText = `${b}`;
 
   return newDiv;
 }
@@ -95,19 +92,37 @@ function makeTheInnerDivs() {
 //loop through the ir divs and create the input divs
 
 for (let i = 0; i < 31; i++) {
-  ir[i].appendChild(makeTheInnerDivs());
+  ir[i].appendChild(makeTheInnerDivs("in", "000ayay"));
+  // add vat divs
+  ir[i].appendChild(makeTheInnerDivs("vat", "vatdivs"));
+  // add aev divs
+  ir[i].appendChild(makeTheInnerDivs("aev", "aevdivs"));
 }
-// get the new divs we made
+// get the new input divs we made
 const inputDivs = document.querySelectorAll(".in");
-// make input field
-function makeInputField() {
+
+// get the vat display divs
+const vatDivs = document.querySelectorAll(".vat");
+// get the amount excluding vat divs
+const aevDivs = document.querySelectorAll(".aev");
+// make input field a=classname b is weather input is disabled
+function makeInputField(a, b) {
   let newIf = document.createElement("input");
-  newIf.className = "input-size sn1";
+  newIf.className = `input-size ${a}`;
   newIf.setAttribute("type", "number");
-  newIf.innerText = "33";
+  newIf.value = "33";
+  // sets the diabled field
+  if (b === true) {
+    newIf.setAttribute("disabled", "true");
+  }
+  return newIf;
 }
-let arr = Array.from(inputDivs);
+
+// loop to insert input fields in the input divs
 for (let i = 0; i < 31; i++) {
-  inputDivs[0].appendChild(makeInputField());
+  inputDivs[i].appendChild(makeInputField("sn1", false));
+  vatDivs[i].appendChild(makeInputField("vat1", true));
+  aevDivs[i].appendChild(makeInputField("aev1", true));
 }
-console.log(inputDivs);
+const ayay = document.querySelectorAll(".sn1");
+console.log(ayay);
