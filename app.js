@@ -66,6 +66,11 @@ function createRow(x) {
   newRowDiv.innerText = `${x + 1}`;
   return newRowDiv;
 }
+
+//cut from
+
+// cut to
+
 // container div for rows
 const containerDiv = document.querySelector(".js-html-container");
 // add the row divs
@@ -93,7 +98,7 @@ for (let i = 0; i < 31; i++) {
   ir[i].appendChild(makeTheInnerDivs());
 }
 // get the new divs we made
-let inputDivs = document.querySelectorAll(".in");
+const inputDivs = document.querySelectorAll(".in");
 // make input field
 function makeInputField() {
   let newIf = document.createElement("input");
@@ -101,8 +106,8 @@ function makeInputField() {
   newIf.setAttribute("type", "number");
   newIf.innerText = "33";
 }
-
+let arr = Array.from(inputDivs);
 for (let i = 0; i < 31; i++) {
-  inputDivs[i].appendChild(makeInputField());
+  inputDivs[0].appendChild(makeInputField());
 }
-console.log();
+console.log(inputDivs);
