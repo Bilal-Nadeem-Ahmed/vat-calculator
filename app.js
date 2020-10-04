@@ -38,21 +38,25 @@ function setMessage(msg) {
   returnMessage.textContent = msg;
 }
 
-// create a row div
+// create a row div takes a calssname
 function createRow(x) {
-  //create row div
   let newRowDiv = document.createElement("div");
-  newRowDiv.className = "row ir";
-  newRowDiv.innerText = `${x + 1}`;
+  newRowDiv.className = `row ${x}`;
+
   return newRowDiv;
 }
 
 // container div for rows
 const containerDiv = document.querySelector(".js-html-container");
+//const containerDiv2 = document.querySelector(".js-html-container-2");
+//const containerDiv3 = document.querySelector(".js-html-container-3");
+
 // add the row divs
 let i = 0;
 while (i <= 30) {
-  containerDiv.appendChild(createRow(i));
+  containerDiv.appendChild(createRow("ir"));
+  //containerDiv2.appendChild(createRow("ir2"));
+  //containerDiv3.appendChild(createRow("ir3"));
   i++;
 }
 
@@ -60,10 +64,9 @@ while (i <= 30) {
 const ir = document.querySelectorAll(".ir");
 
 // function for the input  divs take a for class name, b for inner text
-function makeTheInnerDivs(a, b) {
+function makeTheInnerDivs(a) {
   let newDiv = document.createElement("div");
   newDiv.className = `one-third column ${a}`;
-  newDiv.innerText = `${b}`;
 
   return newDiv;
 }
@@ -71,11 +74,11 @@ function makeTheInnerDivs(a, b) {
 //loop through the ir divs and create the input divs
 
 for (let i = 0; i < 31; i++) {
-  ir[i].appendChild(makeTheInnerDivs("in", "000ayay"));
+  ir[i].appendChild(makeTheInnerDivs("in"));
   // add vat divs
-  ir[i].appendChild(makeTheInnerDivs("vat", "vatdivs"));
+  ir[i].appendChild(makeTheInnerDivs("vat"));
   // add aev divs
-  ir[i].appendChild(makeTheInnerDivs("aev", "aevdivs"));
+  ir[i].appendChild(makeTheInnerDivs("aev"));
 }
 // get the new input divs we made
 const inputDivs = document.querySelectorAll(".in");
@@ -107,11 +110,11 @@ const ayay = document.querySelectorAll(".sn1");
 // get the input fields we created
 const aevInput = document.querySelectorAll(".aev1"),
   salesValue1 = document.querySelectorAll(".sn1"),
-  salesVatInput = document.querySelector(".vat1");
+  salesVatInput = document.querySelectorAll(".vat1");
 
-salesValueButton.addEventListener("click", function () {
-  let info = salesValue1[1].value;
-
-  aevInput[2].value = "234";
-  console.log(info);
+const reducedval = salesValueButton.addEventListener("click", function () {
+  for (var j = 0; j < aevInput.length; j++) {
+    aevInput[j].value = (salesValue1[j].value / 120) * 100;
+    salesVatInput[j].value = (salesValue1[j].value / 120) * 20;
+  }
 });
