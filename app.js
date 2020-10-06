@@ -114,7 +114,25 @@ const aevInput = document.querySelectorAll(".aev1"),
 
 const reducedval = salesValueButton.addEventListener("click", function () {
   for (var j = 0; j < aevInput.length; j++) {
+    let totalSales = 0;
+    // update the fields
     aevInput[j].value = (salesValue1[j].value / 120) * 100;
     salesVatInput[j].value = (salesValue1[j].value / 120) * 20;
+    // calculate the totals
+
+    // calculate the totals
+    const numberValue = getNum(aevInput[j]);
+    totalSales += numberValue;
+    console.log(totalSales);
   }
 });
+
+// get the numbers
+const getNum = (stringNumber) => {
+  const result = Number(stringNumber);
+  if (Number.isNaN(result)) {
+    return 0;
+  }
+
+  return result;
+};
