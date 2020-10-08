@@ -4,7 +4,8 @@ const noToCalc = document.getElementById("val-inpt"),
   addVatBtn = document.getElementById("val2-btn"),
   removeVatBtn = document.getElementById("val3-btn"),
   returnMessage = document.getElementById("message"),
-  salesValueButton = document.getElementById("calculate");
+  salesValueButton = document.getElementById("calculate"),
+  returnSalesMessage = document.querySelector(".final-message");
 
 // Input for calculate vat
 calcVatBtn.addEventListener("click", function () {
@@ -36,6 +37,10 @@ removeVatBtn.addEventListener("click", function () {
 //set message function
 function setMessage(msg) {
   returnMessage.textContent = msg;
+}
+// set final message this should be combined with the above function and updated accordingly
+function setFinalMessage(msg) {
+  returnSalesMessage.textContent = msg;
 }
 
 // create a row div takes a calssname
@@ -112,7 +117,6 @@ const aevInput = document.querySelectorAll(".aev1"),
   salesValue1 = document.querySelectorAll(".sn1"),
   salesVatInput = document.querySelectorAll(".vat1");
 
-let thesales = 0;
 // total sales value for calc
 let totalSales = 0;
 
@@ -130,9 +134,11 @@ const reducedval = salesValueButton.addEventListener("click", function () {
     } else {
       totalSales += parseInt(salesValue1[j].value);
     }
-
-    //totalSales += parseInt(salesValue1[j].value);
-    //console.log(totalSales);
   }
+  setFinalMessage(
+    `The total sales are ${totalSales}. The total VAT due on sales is ${parseInt(
+      (totalSales / 120) * 20
+    )}. the Total sales without VAT are ${parseInt((totalSales / 120) * 100)}. `
+  );
   console.log(totalSales);
 });
