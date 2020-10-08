@@ -112,27 +112,27 @@ const aevInput = document.querySelectorAll(".aev1"),
   salesValue1 = document.querySelectorAll(".sn1"),
   salesVatInput = document.querySelectorAll(".vat1");
 
+let thesales = 0;
+// total sales value for calc
+let totalSales = 0;
+
+// calculate values
 const reducedval = salesValueButton.addEventListener("click", function () {
   for (var j = 0; j < aevInput.length; j++) {
-    let totalSales = 0;
     // update the fields
     aevInput[j].value = (salesValue1[j].value / 120) * 100;
     salesVatInput[j].value = (salesValue1[j].value / 120) * 20;
     // calculate the totals
 
-    // calculate the totals
-    const numberValue = getNum(aevInput[j]);
-    totalSales += numberValue;
-    console.log(totalSales);
+    // add the numbers up
+    if (Number.isNaN(parseInt(salesValue1[j].value))) {
+      totalSales += 0;
+    } else {
+      totalSales += parseInt(salesValue1[j].value);
+    }
+
+    //totalSales += parseInt(salesValue1[j].value);
+    //console.log(totalSales);
   }
+  console.log(totalSales);
 });
-
-// get the numbers
-const getNum = (stringNumber) => {
-  const result = Number(stringNumber);
-  if (Number.isNaN(result)) {
-    return 0;
-  }
-
-  return result;
-};
