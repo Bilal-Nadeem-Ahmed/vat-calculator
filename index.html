@@ -23,87 +23,36 @@
         <p id="message"></p>
       </div>
     </div>
-    <!--VAT ON SALES-->
-    <div class="container">
-      <!--headings-->
-      <div class="row"><h3>Month 1</h3></div>
-      <div class="row">
-        <div class="one-third column">
-          <h4>Sales Including Vat</h4>
-        </div>
-        <div class="one-third column"><h4>VAT Due On Sales</h4></div>
-        <div class="one-third column"><h4>Sales Excluding Vat</h4></div>
-      </div>
-      <div class="js-html-container"></div>
-      <br />
-      <br />
-      <!--headings for month 2-->
-      <div class="row"><h3>Month 2</h3></div>
-      <div class="row">
-        <div class="one-third column">
-          <h4>Sales Including Vat</h4>
-        </div>
-        <div class="one-third column"><h4>VAT Due On Sales</h4></div>
-        <div class="one-third column"><h4>Sales Excluding Vat</h4></div>
-      </div>
-      <div class="js-html-container-2"></div>
-      <br /><br />
-      <!--heading for month 3-->
-      <div class="row"><h3>Month 3</h3></div>
-      <div class="row">
-        <div class="one-third column">
-          <h4>Sales Including Vat</h4>
-        </div>
-        <div class="one-third column"><h4>VAT Due On Sales</h4></div>
-        <div class="one-third column"><h4>Sales Excluding Vat</h4></div>
-      </div>
-      <div class="js-html-container-3"></div>
 
-      <!--
-      <div class="row">
-        <div class="one-third column">
-          <input class="input-size sn1" id="" type="number" />
-        </div>
-        <div class="one-third column">
-          <input class="input-size vat1" type="number" disabled />
-        </div>
-        <div class="one-third column">
-          <input class="input-size aev1" type="number" disabled />
-        </div>
-      </div>
-      -->
+    <!--Vat On Sales-->
+    <div class="row">
+      <div class="one-third column">Month 1</div>
+      <div class="one-third column">Month 2</div>
+      <div class="one-third column">Month 3</div>
+    </div>
+    <table class="u-full-width">
+      <thead>
+        <tr>
+          <th>Sales Including Vat</th>
+          <th>Vat Due on sales</th>
+          <th>Sales Excluding Vat</th>
+          <th>Sales Including Vat</th>
+          <th>Vat Due on sales</th>
+          <th>Sales Excluding Vat</th>
+          <th>Sales Including Vat</th>
+          <th>Vat Due on sales</th>
+          <th>Sales Excluding Vat</th>
+        </tr>
+      </thead>
+      <tbody id="tablebody"></tbody>
+    </table>
+    <br /><br />
+    <input type="submit" value="calculate" id="calculate" />
+    <br /><br />
 
-      <input type="submit" value="calculate" id="calculate" />
+    <p class="final-message"></p>
+    <br /><br />
 
-      <p class="final-message"></p>
-
-      <!--attempt at table-->
-      <div class="row">
-        <div class="one-third column">Month 1</div>
-      </div>
-      <table class="u-one-third-width">
-        <thead>
-          <tr>
-            <th>Sales Including Vat</th>
-            <th>Vat Due on sales</th>
-            <th>Sales Excluding Vat</th>
-            <th>Sales Including Vat</th>
-            <th>Vat Due on sales</th>
-            <th>Sales Excluding Vat</th>
-            <th>Sales Including Vat</th>
-            <th>Vat Due on sales</th>
-            <th>Sales Excluding Vat</th>
-          </tr>
-        </thead>
-        <tbody id="tablebody">
-          <tr>
-            <td>ay</td>
-            <td>Male</td>
-            <td>San Francisco</td>
-          </tr>
-        
-     
-
-    <script src="app.js"></script>
+    <script src="app2.js"></script>
   </body>
 </html>
