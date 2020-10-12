@@ -6,7 +6,7 @@ const noToCalc = document.getElementById("val-inpt"),
   returnMessage = document.getElementById("message"),
   salesValueButton = document.getElementById("calculate"),
   returnSalesMessage = document.querySelector(".final-message"),
-  returnSalesMessage = document.querySelector(".final-message2"),
+  returnSalesMessage2 = document.querySelector(".final-message2"),
   tableBody = document.getElementById("tablebody"),
   purchasesTableBody = document.getElementById("tablebody2"),
   purchasesValueButton = document.getElementById("calculatePurchases");
@@ -124,7 +124,6 @@ const reducedval = salesValueButton.addEventListener("click", function () {
       (totalSales / 120) * 20
     )}. the Total sales without VAT are ${parseInt((totalSales / 120) * 100)}. `
   );
-  console.log(tableBody);
 });
 // need to fix tab indexes and border of the table
 
@@ -155,7 +154,7 @@ const inputTdp = document.querySelectorAll(".inp"),
 for (let k = 0; k < 93; k++) {
   inputTdp[k].appendChild(makeInputField("inp10", false));
   vatTdsp[k].appendChild(makeInputField("vatp10", false));
-  //aevTdsp[k].appendChild(makeInputField("aevp10", true));
+  aevTdsp[k].appendChild(makeInputField("aevp10", true));
 }
 // inputfields for purch
 const inpAmmountp = document.querySelectorAll(".inp10"),
@@ -168,7 +167,7 @@ let totalPurchasesExVat = 0;
 let totalVatOnPurchases = 0;
 
 function setFinalMessagep(msg) {
-  returnSalesMessage.textContent = msg;
+  returnSalesMessage2.textContent = msg;
 }
 
 // calculate values
@@ -178,7 +177,7 @@ const reducedPurchasesval = purchasesValueButton.addEventListener(
     for (let i = 0; i < 93; i++) {
       //     update the fields
       //inpVat[i].value = parseFloat((inpAmmount[i].value / 120) * 20).toFixed(2);
-      aevTds[i].value = parseFloat(
+      inpAevp[i].value = parseFloat(
         inpAmmountp[i].value - inpVatp[i].value
       ).toFixed(2);
 
@@ -188,7 +187,7 @@ const reducedPurchasesval = purchasesValueButton.addEventListener(
       } else {
         totalPurchasesExVat += parseFloat(inpAmmountp[i].value);
       }
-      // add the vat on purchases up
+      // add the vat on purchases u=[?>]
       if (Number.isNaN(parseFloat(inpVatp[i].value))) {
         totalVatOnPurchases += 0;
       } else {
@@ -199,11 +198,8 @@ const reducedPurchasesval = purchasesValueButton.addEventListener(
       `The total purchases are ${
         totalPurchasesExVat + totalVatOnPurchases
       }. The total VAT due on purchases is ${parseInt(
-        tax
-      )}. the Total sales without VAT are ${parseInt(
-        (totalSales / 120) * 100
-      )}. `
+        totalVatOnPurchases
+      )}. the Total sales without VAT are ${parseInt(totalPurchasesExVat)}. `
     );
-    console.log(tableBody);
   }
 );
