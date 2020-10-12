@@ -11,8 +11,8 @@ const noToCalc = document.getElementById("val-inpt"),
 // Input for calculate vat
 calcVatBtn.addEventListener("click", function () {
   // numbers
-  let no = parseInt(noToCalc.value),
-    vat = (no / 120) * 20;
+  let no = noToCalc.value,
+    vat = parseFloat((no / 120) * 20).toFixed(2);
 
   setMessage(`The calculated vat amount at 20% is ${vat}`);
 });
@@ -20,8 +20,8 @@ calcVatBtn.addEventListener("click", function () {
 // Input for add vat
 addVatBtn.addEventListener("click", function () {
   // numbers
-  let no = parseInt(noToCalc.value),
-    addVat = (no / 100) * 120;
+  let no = noToCalc.value,
+    addVat = parseFloat((no / 100) * 120).toFixed(2);
 
   setMessage(`This number including VAT at 20% is ${addVat}`);
 });
@@ -29,8 +29,8 @@ addVatBtn.addEventListener("click", function () {
 // Input for remove vat
 removeVatBtn.addEventListener("click", function () {
   // numbers
-  let no = parseInt(noToCalc.value),
-    removeVat = (no / 120) * 100;
+  let no = noToCalc.value,
+    removeVat = parseFloat((no / 120) * 100).toFixed(2);
 
   setMessage(`This number without VAT at 20% is ${removeVat}`);
 });
@@ -110,10 +110,10 @@ const reducedval = salesValueButton.addEventListener("click", function () {
     inpAev[i].value = parseFloat((inpAmmount[i].value / 120) * 100).toFixed(2);
 
     // add the numbers up
-    if (Number.isNaN(parseInt(inpAmmount[i].value))) {
+    if (Number.isNaN(parseFloat(inpAmmount[i].value))) {
       totalSales += 0;
     } else {
-      totalSales += parseInt(inpAmmount[i].value);
+      totalSales += parseFloat(inpAmmount[i].value);
     }
   }
   setFinalMessage(
@@ -123,3 +123,4 @@ const reducedval = salesValueButton.addEventListener("click", function () {
   );
   console.log(tableBody);
 });
+// need to fix tab indexes and border of the table
