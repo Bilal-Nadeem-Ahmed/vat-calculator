@@ -13,3 +13,7 @@ h2 {
 .salesAndPurchasesCalculator {
   display: none;
 }
+.numb,
+.numb2 {
+  font-weight: bold;
+}

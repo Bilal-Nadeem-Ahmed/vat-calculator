@@ -94,6 +94,10 @@ for (let i = 0; i < 31; i++) {
   tableBody.appendChild(createTableRow(i));
   // get the table rows
   const tableRows = document.querySelectorAll(".tr");
+
+  tableRows[i].appendChild(makeTheInnerTd("numb"));
+  const dateFields = document.querySelectorAll(".numb");
+  dateFields[i].textContent = `${i + 1}`;
   for (let j = 0; j < 3; j++) {
     tableRows[i].appendChild(makeTheInnerTd(`in ${j}`));
     tableRows[i].appendChild(makeTheInnerTd(`vat ${j}`));
@@ -154,6 +158,9 @@ for (let i = 0; i < 31; i++) {
   purchasesTableBody.appendChild(createTableRow2(i));
   // get the table rows
   const tableRows2 = document.querySelectorAll(".tr2");
+  tableRows2[i].appendChild(makeTheInnerTd("numb2"));
+  const dateFields2 = document.querySelectorAll(".numb2");
+  dateFields2[i].textContent = `${i + 1}`;
   for (let j = 0; j < 3; j++) {
     tableRows2[i].appendChild(makeTheInnerTd(`inp ${j}`));
     tableRows2[i].appendChild(makeTheInnerTd(`vatp ${j}`));
