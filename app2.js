@@ -47,8 +47,8 @@ generateFields.addEventListener("click", function () {
   const generateFieldsDiv = document.querySelector(
     ".salesAndPurchasesCalculator"
   );
-  if (generateFieldsDiv.style.display == "none")
-    generateFieldsDiv.style.display = "block";
+
+  generateFieldsDiv.style.display = "block";
 
   //generateFieldsDiv.setAttribute("display", "block");
 });
