@@ -32,70 +32,81 @@
         <p>Enter a number to calculate the VAT</p>
         <input type="number" id="val-inpt" placeholder="Enter your number" />
         <input type="submit" value="calculate-vat" id="val-btn" />
-        <input type="submit" value="add-vat" id="val2-btn" />
-        <input type="submit" value="remove-vat" id="val3-btn" />
         <p id="message"></p>
+        <input type="number" id="val-inpt2" placeholder="Enter your number" />
+        <input type="submit" value="add-vat" id="val2-btn" />
+        <p id="message2"></p>
+        <input type="number" id="val-inpt3" placeholder="Enter your number" />
+        <input type="submit" value="remove-vat" id="val3-btn" />
+        <p id="message3"></p>
       </div>
+      <p>
+        To use our quaterly sales and purchases calculator please click below
+      </p>
+      <br />
+      <input type="submit" value="Generate" id="generate" />
+      <div class="salesAndPurchasesCalculator">
+        <!--Vat On Sales-->
+        <h2>Vat On Sales Calculator</h2>
+        <div class="row">
+          <div class="one-third column">Month 1</div>
+          <div class="one-third column">Month 2</div>
+          <div class="one-third column">Month 3</div>
+        </div>
+        <table class="u-full-width">
+          <thead>
+            <tr>
+              <th>Total</th>
+              <th>Vat</th>
+              <th>Excluding Vat</th>
+              <th>Total</th>
+              <th>Vat</th>
+              <th>Excluding Vat</th>
+              <th>Total</th>
+              <th>Vat</th>
+              <th>Excluding Vat</th>
+            </tr>
+          </thead>
+          <tbody id="tablebody"></tbody>
+        </table>
+        <br /><br />
+        <input type="submit" value="calculate" id="calculate" />
+        <br /><br />
 
-      <!--Vat On Sales-->
-      <h2>Vat On Sales Calculator</h2>
-      <div class="row">
-        <div class="one-third column">Month 1</div>
-        <div class="one-third column">Month 2</div>
-        <div class="one-third column">Month 3</div>
-      </div>
-      <table class="u-full-width">
-        <thead>
-          <tr>
-            <th>Sales Including Vat</th>
-            <th>Vat Due on sales</th>
-            <th>Sales Excluding Vat</th>
-            <th>Sales Including Vat</th>
-            <th>Vat Due on sales</th>
-            <th>Sales Excluding Vat</th>
-            <th>Sales Including Vat</th>
-            <th>Vat Due on sales</th>
-            <th>Sales Excluding Vat</th>
-          </tr>
-        </thead>
-        <tbody id="tablebody"></tbody>
-      </table>
-      <br /><br />
-      <input type="submit" value="calculate" id="calculate" />
-      <br /><br />
+        <p class="final-message"></p>
+        <br /><br />
 
-      <p class="final-message"></p>
-      <br /><br />
-      <h2>Vat On Purchases Calculator</h2>
-      <div class="row">
-        <div class="one-third column">Month 1</div>
-        <div class="one-third column">Month 2</div>
-        <div class="one-third column">Month 3</div>
+        <h2>Vat On Purchases Calculator</h2>
+        <div class="row">
+          <div class="one-third column">Month 1</div>
+          <div class="one-third column">Month 2</div>
+          <div class="one-third column">Month 3</div>
+        </div>
+        <table class="u-full-width">
+          <thead>
+            <tr>
+              <th>Total</th>
+              <th>Vat</th>
+              <th>Excluding Vat</th>
+              <th>Total</th>
+              <th>Vat</th>
+              <th>Excluding Vat</th>
+              <th>Total</th>
+              <th>Vat</th>
+              <th>Excluding Vat</th>
+            </tr>
+          </thead>
+          <tbody id="tablebody2"></tbody>
+        </table>
+        <br /><br />
+        <input
+          type="submit"
+          value="calculate Purchases"
+          id="calculatePurchases"
+        />
+        <br /><br />
+        <p class="final-message2"></p>
       </div>
-      <table class="u-full-width">
-        <thead>
-          <tr>
-            <th>Purchases Including Vat</th>
-            <th>Vat Due on Purchases</th>
-            <th>Purchases Excluding Vat</th>
-            <th>Purchases Including Vat</th>
-            <th>Vat Due on Purchases</th>
-            <th>Purchases Excluding Vat</th>
-            <th>Purchases Including Vat</th>
-            <th>Vat Due on Purchases</th>
-            <th>Purchases Excluding Vat</th>
-          </tr>
-        </thead>
-        <tbody id="tablebody2"></tbody>
-      </table>
-      <br /><br />
-      <input
-        type="submit"
-        value="calculate Purchases"
-        id="calculatePurchases"
-      />
-      <br /><br />
-      <p class="final-message2"></p>
     </div>
 
     <script src="app2.js"></script>

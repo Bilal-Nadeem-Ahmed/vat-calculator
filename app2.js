@@ -1,9 +1,14 @@
 // ui vars
 const noToCalc = document.getElementById("val-inpt"),
+  noToCalc2 = document.getElementById("val-inpt2"),
+  noToCalc3 = document.getElementById("val-inpt3"),
   calcVatBtn = document.getElementById("val-btn"),
   addVatBtn = document.getElementById("val2-btn"),
   removeVatBtn = document.getElementById("val3-btn"),
   returnMessage = document.getElementById("message"),
+  returnMessage2 = document.getElementById("message2"),
+  returnMessage3 = document.getElementById("message3"),
+  generateFields = document.getElementById("generate"),
   salesValueButton = document.getElementById("calculate"),
   returnSalesMessage = document.querySelector(".final-message"),
   returnSalesMessage2 = document.querySelector(".final-message2"),
@@ -17,30 +22,39 @@ calcVatBtn.addEventListener("click", function () {
   let no = noToCalc.value,
     vat = parseFloat((no / 120) * 20).toFixed(2);
 
-  setMessage(`The calculated vat amount at 20% is ${vat}`);
+  setMessage(`The calculated vat amount at 20% is ${vat}`, returnMessage);
 });
 
 // Input for add vat
 addVatBtn.addEventListener("click", function () {
   // numbers
-  let no = noToCalc.value,
+  let no = noToCalc2.value,
     addVat = parseFloat((no / 100) * 120).toFixed(2);
 
-  setMessage(`This number including VAT at 20% is ${addVat}`);
+  setMessage(`This number including VAT at 20% is ${addVat}`, returnMessage2);
 });
 
 // Input for remove vat
 removeVatBtn.addEventListener("click", function () {
   // numbers
-  let no = noToCalc.value,
+  let no = noToCalc3.value,
     removeVat = parseFloat((no / 120) * 100).toFixed(2);
 
-  setMessage(`This number without VAT at 20% is ${removeVat}`);
+  setMessage(`This number without VAT at 20% is ${removeVat}`, returnMessage3);
 });
+// event listener to show the quaterly tables
+generateFields.addEventListener("click", function () {
+  const generateFieldsDiv = document.querySelector(
+    ".salesAndPurchasesCalculator"
+  );
+  if (generateFieldsDiv.style.display == "none")
+    generateFieldsDiv.style.display = "block";
 
-//set message function
-function setMessage(msg) {
-  returnMessage.textContent = msg;
+  //generateFieldsDiv.setAttribute("display", "block");
+});
+//set message function takes a message followed by target input
+function setMessage(msg, ti) {
+  ti.textContent = msg;
 }
 // set final message this should be combined with the above function and updated accordingly
 function setFinalMessage(msg) {
@@ -51,7 +65,6 @@ function setFinalMessage(msg) {
 function createTableRow(x) {
   let newRow = document.createElement("tr");
   newRow.className = `tr ${x}`;
-  newRow.setAttribute("background-color", "black");
 
   return newRow;
 }
