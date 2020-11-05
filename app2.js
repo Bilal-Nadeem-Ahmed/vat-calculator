@@ -223,3 +223,5 @@ const reducedPurchasesval = purchasesValueButton.addEventListener(
     );
   }
 );
+const all = document.getElementsByClassName("container");
+console.log(all);
